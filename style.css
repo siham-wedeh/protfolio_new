@@ -1680,6 +1680,10 @@ button.filter-button:hover {
 }
 #testimonials, .card-body,#about-me{
   background-color: #f7f7f7;
+  padding: 2rem 40px;
+}
+#achievement, #portfolio, #clients, #footer{
+  padding: 2rem 40px;
 }
 #testimonials h2,#about-me h3,#features h3{
   color:#222
@@ -1712,9 +1716,31 @@ button.filter-button:hover {
       font-size: 2.5rem;
   }
 }
+@media (max-width: 990px){
+  #clients .img-fluid{
+
+
+    max-width: 200px!important;
+    max-height: 115px!important;
+  
+}
+
+}
 @media (max-width: 1199px) and (min-width:991px) {
   .display-1 {
       font-size: 2.8rem;
+  }
+  #clients .img-fluid{
+
+
+    max-width: 169px!important;
+    max-height: 100px!important;
+  
+}
+}
+@media(max-width:991px){
+  #billboard .col-lg-6:last-of-type{
+    text-align: center !important;
   }
 }
 @media (max-width: 990px) and (min-width:768px) {
@@ -1736,8 +1762,8 @@ button.filter-button:hover {
 #clients .img-fluid{
 
 
-      max-width: 240px;
-      max-height: 125px;
+      max-width: 220px;
+      max-height: 115px;
     
 }
 #clients .swiper-slide{
@@ -1747,4 +1773,11 @@ button.filter-button:hover {
   max-height: 125px;
   height:125px;
   /* margin-right: 20px; */
+}
+#clients .row{
+  margin: 0 0;
+
+}
+#clients .container-lg{
+  padding: 0 !important;
 }
