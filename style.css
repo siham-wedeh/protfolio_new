@@ -1716,6 +1716,7 @@ button.filter-button:hover {
       font-size: 2.5rem;
   }
 }
+
 @media (max-width: 990px){
   #clients .img-fluid{
 
@@ -1726,10 +1727,12 @@ button.filter-button:hover {
 }
 
 }
+
 @media (max-width: 1199px) and (min-width:991px) {
   .display-1 {
       font-size: 2.8rem;
   }
+
   #clients .img-fluid{
 
 
@@ -1761,9 +1764,12 @@ button.filter-button:hover {
 }
 #clients .img-fluid{
 
-
       max-width: 220px;
       max-height: 115px;
+
+      max-width: 240px;
+      max-height: 125px;
+
     
 }
 #clients .swiper-slide{
@@ -1773,6 +1779,7 @@ button.filter-button:hover {
   max-height: 125px;
   height:125px;
   /* margin-right: 20px; */
+
 }
 #clients .row{
   margin: 0 0;
@@ -1786,4 +1793,5 @@ button.filter-button:hover {
 }
 #subscribe-form input{
   width: 100%;
+
 }
