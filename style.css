@@ -1716,34 +1716,9 @@ button.filter-button:hover {
       font-size: 2.5rem;
   }
 }
-
-@media (max-width: 990px){
-  #clients .img-fluid{
-
-
-    max-width: 200px!important;
-    max-height: 115px!important;
-  
-}
-
-}
-
 @media (max-width: 1199px) and (min-width:991px) {
   .display-1 {
       font-size: 2.8rem;
-  }
-
-  #clients .img-fluid{
-
-
-    max-width: 169px!important;
-    max-height: 100px!important;
-  
-}
-}
-@media(max-width:991px){
-  #billboard .col-lg-6:last-of-type{
-    text-align: center !important;
   }
 }
 @media (max-width: 990px) and (min-width:768px) {
@@ -1769,7 +1744,6 @@ button.filter-button:hover {
 
       max-width: 240px;
       max-height: 125px;
-
     
 }
 #clients .swiper-slide{
@@ -1794,4 +1768,11 @@ button.filter-button:hover {
 #subscribe-form input{
   width: 100%;
 
+}
+#clients .row{
+  margin: 0 0;
+
+}
+#clients .container-lg{
+  padding: 0 !important;
 }
