@@ -616,26 +616,37 @@
 							<button class="btn btn-dark" type="submit">Subscribe</button>
 						</form>
 						<script>
+							function doPost(e) {
+								const sheet = SpreadsheetApp.openById("1ZMt1ZoxBye0-WK3Eee-AoHfjn0sy60_xBl5m31ToVbA").getSheetByName("Sheet1"); // Change "Sheet1" if your tab name is different
+								const email = e.parameter.email;
+								
+								if (email) {
+									sheet.appendRow([new Date(), email]);
+									return ContentService.createTextOutput("Success");
+								} else {
+									return ContentService.createTextOutput("No email provided");
+								}
+								}
 							const form = document.getElementById('subscribe-form');
 							form.addEventListener('submit', function(e) {
-							  e.preventDefault();
-							  
-							  const formData = new FormData(form);
-							  const email = formData.get("email");
-						  
-							  fetch('https://siham-wedeh.github.io/protfolio_new/', {
-								method: 'POST',
-								body: new URLSearchParams({ email })
-							  })
-							  .then(response => response.text())
-							  .then(result => {
+							e.preventDefault();
+							
+							const formData = new FormData(form);
+							const email = formData.get("email");
+
+							fetch('https://script.google.com/macros/s/AKfycbABC1234567890xyz/exec', {
+							method: 'POST',
+							body: new URLSearchParams({ email })
+							})
+							.then(response => response.text())
+							.then(result => {
 								alert("Thank you for subscribing!");
 								form.reset();
-							  })
-							  .catch(error => {
+							})
+							.catch(error => {
 								console.error("Error!", error.message);
-							  });
 							});
+});
 						  </script>
 					</div>
 				</div>
