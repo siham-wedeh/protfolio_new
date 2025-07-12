@@ -611,40 +611,39 @@
 				<div class="footer-menu col-md-4">
 					<div class="subscribe">
 						<p>Subscribe to newsletter to get some updates related with branding, designs and more.</p>
-						<form action="https://script.google.com/macros/s/AKfycbABC1234567890xyz/exec" method="post" target="hidden_iframe" onsubmit="alert('Thank you for subscribing!');">
+						<form action="https://script.google.com/macros/s/AKfycbABC1234567890xyz/exec" method="post" target="hidden_iframe" onsubmit="alert('Thank you for subscribing!');" id="subscribe-form">
 							<input type="email" name="email" placeholder="Write Your Email Address" required>
 							<button type="submit">Subscribe</button>
 						  </form>
 						  <iframe name="hidden_iframe" style="display:none;"></iframe>
 						<script>
 							 const form = document.getElementById('subscribe-form');
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const formData = new FormData(form);
-    const email = formData.get("email");
 
-    fetch('https://script.google.com/macros/s/AKfycbABC1234567890xyz/exec', { // your deployed script URL
-      method: 'POST',
-      body: new URLSearchParams({ email }),
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }
-    })
-    .then(response => response.json())
-    .then(data => {
-      if (data.success) {
-        alert(data.message);  // "Thank you for subscribing!"
-        form.reset();
-      } else {
-        alert("Subscription failed: " + data.message);
-      }
-    })
-    .catch(error => {
-      console.error("Error!", error);
-      alert("Subscription failed. Please try again.");
-    });
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+  const email = formData.get("email");
+
+  fetch('https://script.google.com/macros/s/AKfycbyrbjlu7KX6ZKobukVmrCzK7ofnclnOr77GoBo2AODnSXgVxg8d00zVEW7uPpD97Ow9/exec', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({ email: email })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      alert(data.message);  // Thank you for subscribing!
+      form.reset();
+    } else {
+      alert("Subscription failed: " + data.message);
+    }
+  })
+  .catch(error => {
+    console.error("Error!", error);
+    alert("Subscription failed. Please try again.");
   });
+});
 						  </script>
 					</div>
 				</div>
