@@ -611,10 +611,11 @@
 				<div class="footer-menu col-md-4">
 					<div class="subscribe">
 						<p>Subscribe to newsletter to get some updates related with branding, designs and more.</p>
-						<form id="subscribe-form">
-							<input class="rounded-2" type="email" name="email" placeholder="Write Your Email Address" required>
-							<button class="btn btn-dark" type="submit">Subscribe</button>
-						</form>
+						<form action="https://script.google.com/macros/s/AKfycbABC1234567890xyz/exec" method="post" target="hidden_iframe" onsubmit="alert('Thank you for subscribing!');">
+							<input type="email" name="email" placeholder="Write Your Email Address" required>
+							<button type="submit">Subscribe</button>
+						  </form>
+						  <iframe name="hidden_iframe" style="display:none;"></iframe>
 						<script>
 							 const form = document.getElementById('subscribe-form');
   form.addEventListener('submit', function(e) {
