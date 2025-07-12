@@ -80,7 +80,7 @@
 		});
 
 		var testimonial_swiper = new Swiper(".testimonial-carousel", {
-			slidesPerView: 3,
+			slidesPerView: 1,
 			spaceBetween: 30,
 			loop: true,
 			pagination: {
@@ -93,7 +93,7 @@
 					spaceBetween: 20,
 				},
 				980: {
-					slidesPerView: 3,
+					slidesPerView: 1,
 					spaceBetween: 5,
 				},
 			},
