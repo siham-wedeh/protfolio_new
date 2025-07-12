@@ -616,37 +616,34 @@
 							<button class="btn btn-dark" type="submit">Subscribe</button>
 						</form>
 						<script>
-							function doPost(e) {
-								const sheet = SpreadsheetApp.openById("1ZMt1ZoxBye0-WK3Eee-AoHfjn0sy60_xBl5m31ToVbA").getSheetByName("Sheet1"); // Change "Sheet1" if your tab name is different
-								const email = e.parameter.email;
-								
-								if (email) {
-									sheet.appendRow([new Date(), email]);
-									return ContentService.createTextOutput("Success");
-								} else {
-									return ContentService.createTextOutput("No email provided");
-								}
-								} 
-							const form = document.getElementById('subscribe-form');
-							form.addEventListener('submit', function(e) {
-							e.preventDefault();
-							
-							const formData = new FormData(form);
-							const email = formData.get("email");
+							 const form = document.getElementById('subscribe-form');
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(form);
+    const email = formData.get("email");
 
-							fetch('https://script.google.com/macros/s/AKfycbABC1234567890xyz/exec', {
-							method: 'POST',
-							body: new URLSearchParams({ email })
-							})
-							.then(response => response.text())
-							.then(result => {
-								alert("Thank you for subscribing!");
-								form.reset();
-							})
-							.catch(error => {
-								console.error("Error!", error.message);
-							});
-});
+    fetch('https://script.google.com/macros/s/AKfycbABC1234567890xyz/exec', { // your deployed script URL
+      method: 'POST',
+      body: new URLSearchParams({ email }),
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        alert(data.message);  // "Thank you for subscribing!"
+        form.reset();
+      } else {
+        alert("Subscription failed: " + data.message);
+      }
+    })
+    .catch(error => {
+      console.error("Error!", error);
+      alert("Subscription failed. Please try again.");
+    });
+  });
 						  </script>
 					</div>
 				</div>
