@@ -611,8 +611,32 @@
 				<div class="footer-menu col-md-4">
 					<div class="subscribe">
 						<p>Subscribe to newsletter to get some updates related with branding, designs and more.</p>
-						<input class="rounded-2" type="text" name="email" placeholder="Write Your Email Address">
-						<button class="btn btn-dark">Subscribe</button>
+						<form id="subscribe-form">
+							<input class="rounded-2" type="email" name="email" placeholder="Write Your Email Address" required>
+							<button class="btn btn-dark" type="submit">Subscribe</button>
+						</form>
+						<script>
+							const form = document.getElementById('subscribe-form');
+							form.addEventListener('submit', function(e) {
+							  e.preventDefault();
+							  
+							  const formData = new FormData(form);
+							  const email = formData.get("email");
+						  
+							  fetch('https://siham-wedeh.github.io/protfolio_new/', {
+								method: 'POST',
+								body: new URLSearchParams({ email })
+							  })
+							  .then(response => response.text())
+							  .then(result => {
+								alert("Thank you for subscribing!");
+								form.reset();
+							  })
+							  .catch(error => {
+								console.error("Error!", error.message);
+							  });
+							});
+						  </script>
 					</div>
 				</div>
 			</div>
