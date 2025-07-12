@@ -1781,3 +1781,9 @@ button.filter-button:hover {
 #clients .container-lg{
   padding: 0 !important;
 }
+#subscribe-form{
+  width: 100%;
+}
+#subscribe-form input{
+  width: 100%;
+}
