@@ -117,6 +117,10 @@
 				
 				},
 				980: {
+					slidesPerView: 3,
+					spaceBetween: 5,
+				},
+				1200: {
 					slidesPerView: 4,
 					spaceBetween: 5,
 				},
@@ -124,22 +128,22 @@
 		});
 	}
 
-    function initIsotope() {
-        // Initialize Isotope
-        var $container = $('.isotope-container').isotope({
-            itemSelector: '.item',
-            layoutMode: 'masonry'
-        });
+    // function initIsotope() {
+    //     // Initialize Isotope
+    //     var $container = $('.isotope-container').isotope({
+    //         itemSelector: '.item',
+    //         layoutMode: 'masonry'
+    //     });
 
-        // Active button class management
-        $('.filter-button').on('click', function () {
-            $('.filter-button').removeClass('active');
-            $(this).addClass('active');
+    //     // Active button class management
+    //     $('.filter-button').on('click', function () {
+    //         $('.filter-button').removeClass('active');
+    //         $(this).addClass('active');
             
-            var filterValue = $(this).attr('data-filter');
-            $container.isotope({ filter: filterValue });
-        });
-    }
+    //         var filterValue = $(this).attr('data-filter');
+    //         $container.isotope({ filter: filterValue });
+    //     });
+    // }
 
     $(document).ready(function () {
         overlayMenu();
@@ -158,9 +162,23 @@
 			// Fade out preloader
             $("#overlayer").fadeOut("slow");
             $('body').addClass('loaded');
-            initIsotope();
+            // initIsotope();
         });
     });
 
 
 })(jQuery);
+const navLinks = document.querySelectorAll('.nav__list-item a');
+  const menuToggle = document.getElementById('menu-toggle');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      // Hide the nav overlay
+      document.body.classList.remove('nav-active');
+
+      // Uncheck the checkbox to reset the hamburger rotation
+      if (menuToggle.checked) {
+        menuToggle.checked = false;
+      }
+    });
+  });

@@ -72,7 +72,7 @@ CSS STRUCTURE:
     - Logo
     - Header Menu
     - Nav Sidebar
-  6.3 Billboard
+  6.3 about_me
   6.4 About Me Section
   6.5 Portfolio Section
   6.6 Quotation Section
@@ -146,7 +146,11 @@ body {
   line-height: 1.8;
   color: var(--body-text-color);
 }
-
+html, body{
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
 a {
   color: var(--accent-color);
   text-decoration: none;
@@ -868,10 +872,15 @@ blockquote cite {
   position: absolute;
   width: 100%;
   height: 2px;
-  background-color: var(--light-color);
+  background-color: #fff;
+  font-weight: 800;
   transition-duration: .25s;
 }
-
+#menu-toggle:checked~.menu-btn>span::before,
+#menu-toggle:checked~.menu-btn>span::after{
+  background-color: var(--accent-color);
+  font-weight: 800;
+}
 .menu-btn.light>span,
 .menu-btn.light>span::before,
 .menu-btn.light>span::after {
@@ -1094,9 +1103,9 @@ body.nav-active .nav__list-item:nth-child(10) {
   transition-delay: 1.7s;
 }
 
-/*----- 6.3 Billboard
+/*----- 6.3 about_me
 --------------------------------------------------------------*/
-#billboard .banner-content {
+#about_me .banner-content {
   padding-bottom: 40px;
 }
 
@@ -1104,11 +1113,11 @@ body.nav-active .nav__list-item:nth-child(10) {
   .jarallax {
     min-height: auto;
   }
-  #billboard .col-lg-6:last-of-type{
+  #about_me .col-lg-6:last-of-type{
     text-align: center !important;
   }
 
-  #billboard .banner-content {
+  #about_me .banner-content {
     padding-top: 150px;
     padding-bottom: 10px;
   }
@@ -1117,29 +1126,29 @@ body.nav-active .nav__list-item:nth-child(10) {
 
 /*----- 6.4 About Me Section
 --------------------------------------------------------------*/
-#about-me .intro {
+#services .intro {
   margin-right: 60px;
   margin-bottom: 70px;
 }
 
-#about-me .intro p {
+#services .intro p {
   line-height: 2.5;
   color: var(--body-text-color);
   ;
 }
 
-#about-me .skill-chart ul {
+#services .skill-chart ul {
   text-transform: uppercase;
   list-style: none;
 }
 
-#about-me .skill-chart li {
+#services .skill-chart li {
   border-bottom: 1px solid #dbdbdb;
   margin-bottom: 40px;
   width: 100%;
 }
 
-#about-me .skill-chart li span.skill {
+#services .skill-chart li span.skill {
   display: block;
   border-bottom: 3px solid #000;
   padding-bottom: 24px;
@@ -1269,18 +1278,18 @@ body.nav-active .nav__list-item:nth-child(10) {
 
 /*----- 6.8 Post Grid Section
 --------------------------------------------------------------*/
-#post-grid .post-item {
+#news .post-item {
   overflow: hidden;
   position: relative;
   cursor: pointer;
   margin-bottom: 40px;
 }
 
-#post-grid .post-item:last-child {
+#news .post-item:last-child {
   margin-right: 0;
 }
 
-#post-grid a.post-link:before {
+#news a.post-link:before {
   content: '';
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
   width: 100%;
@@ -1292,13 +1301,13 @@ body.nav-active .nav__list-item:nth-child(10) {
   transition-duration: 0.8s;
 }
 
-#post-grid .post-item:hover a.post-link:before {
+#news .post-item:hover a.post-link:before {
   height: 100%;
   top: 0;
   transition-property: top, opacity;
 }
 
-#post-grid .post-item figcaption {
+#news .post-item figcaption {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1308,7 +1317,7 @@ body.nav-active .nav__list-item:nth-child(10) {
   padding: 0 35px;
 }
 
-#post-grid .post-item h3 {
+#news .post-item h3 {
   font-size: 1.5em;
   line-height: 1.5;
   font-weight: 700;
@@ -1588,15 +1597,16 @@ article.post-item {
 }
 
 .btn-primary {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
+  background-color: var(--accent-color) !important;
+  border-color: var(--accent-color)!important;
 }
 
 .btn-primary:focus,
 .btn-primary:hover {
   color: #fff;
   background-color: var(--light-color);
-  border-color: var(--light-color);
+  opacity:0.6
+  
 }
 
 .btn-outline-primary {
@@ -1681,14 +1691,14 @@ button.filter-button:hover {
 #achievement, #portfolio,#clients,#footer{
   background-color: #222 !important;
 }
-#testimonials, .card-body,#about-me{
+#testimonials, .card-body,#services{
   background-color: #f7f7f7;
   padding: 2rem 40px;
 }
 #achievement, #portfolio, #clients, #footer{
   padding: 2rem 40px;
 }
-#testimonials h2,#about-me h3,#features h3{
+#testimonials h2,#services h3,#features h3{
   color:#222
 }
 #testimonials .card-body{
@@ -1718,6 +1728,14 @@ button.filter-button:hover {
   .display-1 {
       font-size: 2.5rem;
   }
+  
+}
+@media (max-width: 600px) {
+  
+  #about_me .img-fluid {
+    max-width: 100% !important;
+    height: 100%;
+}
 }
 @media (max-width: 1199px) and (min-width:991px) {
   .display-1 {
@@ -1728,12 +1746,25 @@ button.filter-button:hover {
   .display-1 {
       font-size: 2.8rem;
   }
+ .col-md-4{
+    width:50% !important
+
+  }
 }
-#billboard .img-fluid {
+#about_me .img-fluid {
   max-width: 386px;
   height: 100%;
 }
-#billboard  .col-lg-6:last-of-type{
+#news{
+  padding-left: 40px;
+  padding-right: 40px;
+}
+#news img{
+  max-width: 100%;
+  height: 470px;
+  object-fit: cover;
+}
+#about_me  .col-lg-6:last-of-type{
   text-align: right;
 }
 .info-box img{
@@ -1801,20 +1832,55 @@ button.filter-button:hover {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-.achieve_box{
-  position: absolute;
-  top:-100%;
-  left:0;
-  width: 100%;
-  height:100%;
+#achievement .card-body {
+  position: relative;
+  overflow: hidden;
   border-radius: 1rem;
-  /* z-index: -1; */
-  z-index: 1;
-
-  object-fit: fit;
-  transition: all 0.4s ease-in-out;
+  height: 355px;
+ color:#222;
+  z-index: 0;
 }
-#achievement .card,
+.logo-footer{
+  font-size: 3rem;
+  font-weight: 800;
+}
+#news .display-5{
+  color:#222
+}
+#achievement .achieve_box {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  z-index: 1;
+  object-fit: cover;
+  transition: all 0.4s ease-in-out;
+  opacity: 0.6; /* set opacity */
+}
+
+#achievement .card-body:hover .achieve_box {
+  top: 0;
+}
+
+#achievement .card-body *:not(.achieve_box) {
+  position: relative;
+  z-index: 2; /* bring text above the image */
+}
+/* .achieve_box{
+  position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem; */
+    /* z-index: -1; */
+    /* z-index: 1;
+    object-fit: contain;
+    transition: all 0.4s ease-in-out;
+} */
+/* #achievement .card,
 #achievement .card-body{
   border-radius: 1rem;
   height: 355px;
@@ -1823,4 +1889,5 @@ button.filter-button:hover {
 #achievement .card-body:hover .achieve_box{
 top:0
 
-}
+} */
+
