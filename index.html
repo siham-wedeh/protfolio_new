@@ -727,59 +727,7 @@
 						  </form>
 						  <div id="form-message"></div>
 						  <div id="loading-gif" style="display:none;"></div>
-						  <!-- <script>
-						 document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('subscribe-form');
-  const message = document.getElementById('form-message');
-  const loadingGif = document.getElementById('loading-gif');
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    message.textContent = '';
-    message.style.color = '';
-    loadingGif.style.display = 'inline-block';
-
-    const email = form.querySelector('input[name="email"]').value.trim();
-    if (!email) {
-      loadingGif.style.display = 'none';
-      message.style.color = 'red';
-      message.textContent = 'Please enter a valid email.';
-      return;
-    }
-
-    const callbackName = 'handleResponse_' + Date.now();
-
-    // Create the callback function
-    window[callbackName] = function (response) {
-      loadingGif.style.display = 'none';
-
-      if (response.success) {
-        message.style.color = 'green';
-        message.textContent = response.message || 'Success';
-        form.reset();
-      } else {
-        message.style.color = 'red';
-        message.textContent = response.message || 'Subscription failed.';
-      }
-
-      // Cleanup
-      delete window[callbackName];
-      document.body.removeChild(script);
-    };
-
-    const encodedEmail = encodeURIComponent(email);
-    const script = document.createElement('script');
-    script.src = "https://script.google.com/macros/s/AKfycbzSYsgx6tklBFn_TP9dZoWjJAp6_I_ll_-Q7cgTJv7_eNpYtZ7SSdxhtyYFVv7L9tRk/exec?email=${encodedEmail}&callback=${callbackName}";
-    script.onerror = function () {
-      loadingGif.style.display = 'none';
-      message.style.color = 'red';
-      message.textContent = 'Failed to connect to server.';
-    };
-    document.body.appendChild(script);
-  });
-});
-						  </script> -->
+						
 					</div>
 				</div>
 			</div>

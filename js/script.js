@@ -173,12 +173,38 @@ const navLinks = document.querySelectorAll('.nav__list-item a');
 
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
-      // Hide the nav overlay
       document.body.classList.remove('nav-active');
-
-      // Uncheck the checkbox to reset the hamburger rotation
       if (menuToggle.checked) {
         menuToggle.checked = false;
       }
+    });
+  });
+  document.getElementById("subscribe-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const email = this.email.value;
+    const loadingGif = document.getElementById("loading-gif");
+    const messageBox = document.getElementById("form-message");
+
+    loadingGif.style.display = "block";
+    messageBox.innerText = "";
+
+    // Replace with your actual deployed Google Apps Script URL
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxSB8_FtZJsYqOCd1bNh2u1jLQQxnev0Vjzn-k8b_ioShbdrR1Kf_yeIiujFkLKGryc/exec';
+
+    fetch(scriptURL, {
+      method: 'POST',
+      body: new URLSearchParams({ email })
+    })
+    .then(response => response.text())
+    .then(responseText => {
+      loadingGif.style.display = "none";
+      messageBox.innerText = "Thank you for subscribing!";
+      document.getElementById("subscribe-form").reset();
+    })
+    .catch(error => {
+      loadingGif.style.display = "none";
+      messageBox.innerText = "There was an error. Please try again.";
+      console.error('Error!', error.message);
     });
   });
