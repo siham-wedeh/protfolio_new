@@ -190,7 +190,7 @@ const navLinks = document.querySelectorAll('.nav__list-item a');
     messageBox.innerText = "";
 
     // Replace with your actual deployed Google Apps Script URL
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxSB8_FtZJsYqOCd1bNh2u1jLQQxnev0Vjzn-k8b_ioShbdrR1Kf_yeIiujFkLKGryc/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbx2XBvGKlYUE_1E1aWLgCRpUHpIWWYhAaZkGtC8vJEBXXkYz6CS8WC4DwO8SQ2Dh3FQ/exec';
 
     fetch(scriptURL, {
       method: 'POST',
