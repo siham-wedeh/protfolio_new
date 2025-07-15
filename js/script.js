@@ -208,3 +208,45 @@ const navLinks = document.querySelectorAll('.nav__list-item a');
       console.error('Error!', error.message);
     });
   });
+
+	document.addEventListener("DOMContentLoaded", function () {
+		var maxChars = 50;
+		var paragraphs = document.querySelectorAll("#testimonials .card-text.mb-2");
+
+		paragraphs.forEach(function (para) {
+			var fullText = para.textContent.trim();
+
+			if (fullText.length > maxChars) {
+				var shortText = fullText.substring(0, maxChars) + "... ";
+				var viewMoreLink = document.createElement("a");
+				viewMoreLink.href = "#";
+				viewMoreLink.textContent = "View More";
+				viewMoreLink.style.color = "#9d865c";
+				viewMoreLink.style.fontWeight = "800";
+				viewMoreLink.style.cursor = "pointer";
+				viewMoreLink.setAttribute("aria-expanded", "false");
+
+				let isExpanded = false;
+
+				viewMoreLink.addEventListener("click", function (e) {
+					e.preventDefault();
+					if (isExpanded) {
+						para.textContent = shortText;
+						para.appendChild(viewMoreLink);
+						viewMoreLink.textContent = "View More";
+						viewMoreLink.setAttribute("aria-expanded", "false");
+						isExpanded = false;
+					} else {
+						para.textContent = fullText;
+						para.appendChild(viewMoreLink);
+						viewMoreLink.textContent = "View Less";
+						viewMoreLink.setAttribute("aria-expanded", "true");
+						isExpanded = true;
+					}
+				});
+				para.textContent = shortText;
+				para.appendChild(viewMoreLink);
+			}
+		});
+	});
+
