@@ -36,3 +36,46 @@ var swiper_clients = new Swiper('.swiper_clients', {
     
    
 });
+ // validation for all text/textarea inputs
+ $('form input[type="text"], form textarea').on('input', function () {
+    var value = $.trim($(this).val());
+    var placeholder = ($(this).attr('placeholder') || '').toLowerCase();
+    var errorField = $(this).closest('.input_container').find('.error-message');
+
+    if (value === '') {
+        errorField.text('This field is required').show();
+    }
+     else {
+        errorField.hide();
+    }
+});
+// only numbers + live error
+$('#phoneInput').on('input', function () {
+    this.value = this.value.replace(/\D/g, '');
+    var errorField = $(this).closest('.input_container').find('.error-message');
+    if (this.value === '') {
+        errorField.text('This field is required').show();
+    } else {
+        errorField.hide();
+    }
+});
+  // Form submit validation
+  $('form').on('submit', function (e) {
+    e.preventDefault();
+    let isValid = true;
+    $('.error-message').hide();
+
+    $('form input[type="text"],form textarea').each(function () {
+        var value = $.trim($(this).val());
+        var placeholder = ($(this).attr('placeholder') || '').toLowerCase();
+        var errorField = $(this).closest('.input_container').find('.error-message');
+
+        if (value === '') {
+            errorField.text('This field is required').show();
+            isValid = false;
+        } 
+    });
+    if (isValid) {
+        this.submit();
+    }
+});

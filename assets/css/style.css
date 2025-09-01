@@ -756,7 +756,8 @@ a{
     display: flex
 ;
     align-items: center;
-    border-radius: 44px
+    border-radius: 44px;
+    position: relative;
 
 }
 .contact_us .grid_container .col.span_2 form .input_container .img_container{
@@ -938,6 +939,14 @@ a{
 }
 .header_mobile .flex-col .first_list img{
     width:33px
+}
+.error-message{
+    display: none;
+    position: absolute;
+    bottom: -1.3rem;
+    left: 13px;
+    font-size: 12px;
+
 }
 .header_mobile .right-list a.flex{
     display: flex;
