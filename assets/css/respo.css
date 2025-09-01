@@ -1,0 +1,256 @@
+@media(max-width:767px){
+    .banner{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+    .banner .flex_col.second_Sec{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .banner .flex_col.first_Sec a{
+      
+    padding: 0.6rem 0.5rem;
+    width: 235px;
+  
+    font-size: 18px;
+    }
+    .banner .flex_col .box_desc_second .name_desc .line{
+        display: block;
+        width: 150px;
+    }
+    .banner .flex_col .box_desc_second{
+        transform: rotate(0);
+        width: 100%;
+        margin-top: 0;
+    }
+    .banner .flex_col .box_container{
+        transform: rotate(0) translateY(0);
+        width: calc(100% - 2rem);
+       
+        display: grid
+;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        justify-content: center;
+        gap:1rem
+    }
+    .banner .flex_col.first_Sec .title {
+        font-size: 30px;
+    }
+    .banner .flex_col.first_Sec .desc {
+        
+        font-size: 16px;
+    }
+    .banner .line{
+        display: none;
+    }
+    .banner .flex_col .box_container .box{
+        width:100%
+    }
+    .banner .flex_col.first_Sec{
+        width:100%
+    }
+    .services .grid_Container, .achievement .grid_Container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .achievement .grid_Container .col:nth-of-type(2){
+        top:0
+    }
+.work_process .flex_row{
+    flex-direction: column;
+    gap:10rem
+}
+.work_process .flex_row div{
+    width: 250px;
+    height: 250px;
+    font-size: 18px;
+
+}
+.work_process .flex_row div img{
+    width: 290px;
+    height: 290px;
+
+}
+.work_process .flex_row div.box_news:first-of-type::after,
+.work_process .flex_row div.box_news:nth-of-type(2)::after,
+.work_process .flex_row div.box_news:nth-of-type(3)::after,
+.work_process .flex_row div.box_news:nth-of-type(4)::after{
+    bottom: -4rem !important;
+    transform: rotate(45deg);
+    right: 41.6% !important;
+    left:44%;
+    top: 124% !important;
+    background: url(../images/arrow_right.svg);
+    position: absolute;
+    content: "";
+    top: 90%;
+    width: 36px;
+    height: 32px;
+    z-index: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+.work_process .flex_row div:nth-of-type(2)::before{
+    display: none;
+}
+    .testimonials .swiper_testimonials .swiper-slide{
+        width: calc(100% - 2rem);
+    }
+    
+    .contact_us .grid_container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .contact_us .grid_container .col.span_1{
+        border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    }
+    .contact_us .grid_container .col.span_2{
+        border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    }
+    .contact_us .grid_container .col.span_1 .contact_info .title{
+        font-size: 20px;
+    }
+
+
+
+}
+@media(max-width:990px){
+    .header_desktop{
+        display: none;
+    }
+    .header_mobile{
+        display: block;
+    }
+    .services .title, .achievement .title, .news .title, .testimonials .title, .work_process .title, .clients .title {
+        font-size: 30px;
+    }
+    .services .desc, .achievement .desc, .testimonials .desc, .news .desc, .clients .desc, .work_process .desc
+{
+    font-size: 15px;
+}
+
+    .news .grid_Container .title{
+        font-size: 18.5px;
+
+    }
+    .news .grid_Container .col .link img{
+        width:25px
+    }
+    .news .grid_Container .desc{
+        font-size: 16px;
+        
+    }
+    .news .grid_Container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .footer .grid_container{
+        flex-direction: column;
+    }
+    .footer .grid_container .col.span_1,
+    .footer .grid_container .col.span_2{
+        width:100% !important
+    }
+   
+
+}
+@media(max-width:1199px) and (min-width:991px){
+    .contact_us .grid_container .col.span_1 .contact_info .title {
+        font-size: 21px;
+    }
+    .work_process .flex_row div{
+        width: 200px;
+        height: 200px;
+        font-size: 16px;
+    }
+    .work_process .flex_row div img{
+        width: 250px;
+        height: 250px;
+    }
+    .work_process .flex_row div:nth-of-type(2)::after,
+     .work_process .flex_row div:nth-of-type(3)::after,
+     .work_process .flex_row div:first-of-type::after,
+.work_process .flex_row div:nth-of-type(2)::before {
+        width: 26px;
+        height: 24px;
+    }
+    /* .work_process .flex_row{
+        row-gap:6rem
+    } */
+}
+@media(max-width:990px) and (min-width:768px){
+    .banner .flex_col .review .review_container .img_container, .banner .flex_col .box_desc_second .flex_row .img {
+        width: 34px;
+    }
+    .banner .flex_col .box_desc_second .name_desc .line{
+        width:74px
+    }
+    .banner{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .banner .flex_col.first_Sec{
+        width:100%
+    }
+    .banner .flex_col.second_Sec{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .banner .flex_col .box_desc_second{
+        transform: rotate(0);
+        margin-top: 0;
+    }
+    .banner .flex_col .box_container{
+        transform: rotate(0) translateY(0);
+        gap: 0.5rem;
+    }
+    .banner .flex_col .box_container .box .number {
+        font-size: 21px;
+    }
+    .banner .flex_col .box_container .box .desc {
+        font-size: 13px;
+    }
+    .achievement .grid_Container .col:nth-of-type(2){
+        top:0
+    }
+    .services .grid_Container, .achievement .grid_Container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .contact_us .grid_container .col.span_1 .contact_info .title {
+        font-size: 21px;
+    }
+    .work_process .flex_row div{
+        width: 159px;
+        height: 159px;
+        font-size: 14px;
+    }
+    .work_process .flex_row div img{
+        width: 192px;
+        height: 192px;
+    }
+    .work_process .flex_row div:nth-of-type(2)::after,
+     .work_process .flex_row div:nth-of-type(3)::after,
+     .work_process .flex_row div:first-of-type::after,
+.work_process .flex_row div:nth-of-type(2)::before {
+    width: 18px;
+    height: 16px;
+    }
+    .work_process .flex_row div:first-of-type::after, .work_process .flex_row div:nth-of-type(2)::before,
+    .work_process .flex_row div:nth-of-type(2)::after, .work_process .flex_row div:nth-of-type(3)::after {
+        top:95%
+    }
+    
+}
