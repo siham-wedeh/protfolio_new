@@ -183,7 +183,29 @@ a{
     width: 278px;
     text-align: center;
     font-size: 20px;
+    transition: all 0.2s ease-in-out;
     
+}
+.services .grid_Container .col,
+.achievement .grid_Container .col,
+.news .grid_Container .col .link,
+.contact_us .grid_container .col.span_2 form .submit{
+    transition: all 0.2s ease-in-out;
+    
+
+}
+.news .grid_Container .col .link,
+.contact_us .grid_container .col.span_2 form .submit{
+    cursor: pointer;
+}
+.banner .flex_col.first_Sec a:hover,
+.services .grid_Container .col:hover,
+.achievement .grid_Container .col:hover,
+.news .grid_Container .col .link:hover,
+.contact_us .grid_container .col.span_2 form .submit:hover{
+    opacity: 0.7;
+    transform: scale(1.05);
+
 }
 .banner .flex_col.second_Sec{
     display: flex
