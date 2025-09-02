@@ -1,3 +1,8 @@
+AOS.init({
+    duration: 400, 
+    easing: 'ease-in-out', 
+   
+});
 $(document).on('click', function (event) {
     const $sidebar = $('.right-list');
     const $svgIcon = $('.header_mobile img.icon');
