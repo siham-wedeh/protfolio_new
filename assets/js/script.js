@@ -84,3 +84,16 @@ $('#phoneInput').on('input', function () {
         this.submit();
     }
 });
+document.querySelectorAll('.testimonials .swiper_testimonials .swiper-slide .flex_col .desc_slide').forEach(desc => {
+    if (desc.scrollHeight > desc.clientHeight) {
+      const btn = document.createElement('button');
+      btn.classList.add('toggle-btn');
+      btn.textContent = 'View More';
+      desc.insertAdjacentElement('afterend', btn);
+
+      btn.addEventListener('click', function () {
+        desc.classList.toggle('expanded');
+        this.textContent = desc.classList.contains('expanded') ? 'View Less' : 'View More';
+      });
+    }
+  });

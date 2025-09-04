@@ -126,6 +126,33 @@
 
 
 }
+@media(max-width:767px) and (min-width:600px){
+    .news .grid_Container{
+        grid-template-columns: repeat(1, 514px);
+        gap:3rem
+    }
+}
+@media(max-width:599px) and (min-width:487px){
+    .news .grid_Container{
+        grid-template-columns: repeat(1, 514px);
+        gap:3rem
+    }
+}
+@media(max-width:486px){
+    .news .grid_Container{
+        grid-template-columns: repeat(1, 346px);
+    }
+    .news .grid_Container .col{
+        height: 473px;
+
+    }
+ 
+
+    .news .grid_Container .col .link{
+        margin-left: 1rem;
+        margin-bottom: 1.5rem;
+    }
+}
 @media(max-width:990px){
     .header_desktop{
         display: none;
@@ -152,9 +179,9 @@
         font-size: 16px;
         
     }
-    .news .grid_Container{
+    /* .news .grid_Container{
         grid-template-columns: repeat(1, 1fr);
-    }
+    } */
     .footer .grid_container{
         flex-direction: column;
     }
@@ -166,6 +193,17 @@
 
 }
 @media(max-width:1199px) and (min-width:991px){
+    .achievement .grid_Container .col:nth-of-type(2),
+.achievement .grid_Container .col:nth-of-type(4){
+    position: relative;
+    top: 4rem;
+}
+.achievement .grid_Container .col:nth-of-type(5){
+    top:0
+}
+    .achievement .grid_Container{
+        grid-template-columns: repeat(2, 1fr);
+    }
     .contact_us .grid_container .col.span_1 .contact_info .title {
         font-size: 21px;
     }
@@ -190,6 +228,10 @@
     } */
 }
 @media(max-width:990px) and (min-width:768px){
+    .news .grid_Container{
+        grid-template-columns: repeat(1, 514px);
+        gap:3rem
+    }
     .banner .flex_col .review .review_container .img_container, .banner .flex_col .box_desc_second .flex_row .img {
         width: 34px;
     }
@@ -223,8 +265,9 @@
     .banner .flex_col .box_container .box .desc {
         font-size: 13px;
     }
-    .achievement .grid_Container .col:nth-of-type(2){
-        top:0
+    .achievement .grid_Container .col:nth-of-type(2),
+    .achievement .grid_Container .col:nth-of-type(4){
+        top:5rem
     }
     .services .grid_Container, .achievement .grid_Container{
         grid-template-columns: repeat(2, 1fr);
