@@ -32,7 +32,7 @@ var swiper_testimonials = new Swiper('.swiper_testimonials', {
    
     
    
-});
+}); 
 var swiper_clients = new Swiper('.swiper_clients', {
     slidesPerView: 'auto',
 
